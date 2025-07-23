@@ -1,0 +1,76 @@
+.service-detail {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f9fafb;  /* Light background for better readability */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.heading-blue {
+  color: #2563eb;         /* A richer, more modern blue */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.text-black {
+  color: #111827;         /* Slightly softer black for better readability */
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.highlight-yellow {
+  color: #f59e0b;         /* Amber shade for better contrast on light bg */
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Responsive improvements for smaller screens */
+@media (max-width: 768px) {
+  .heading-blue {
+    font-size: 2rem;
+  }
+  .text-black {
+    font-size: 1rem;
+  }
+  .highlight-yellow {
+    font-size: 1.1rem;
+  }
+}
+.service-detail {
+  text-align: center;
+  padding: 2rem;
+}
+
+.service-image {
+  width: 300px;
+  max-width: 80%;
+  margin: 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.heading-blue {
+  color: #2563eb;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.text-black {
+  color: #333;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.highlight-yellow {
+  color: #fbbf24;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+

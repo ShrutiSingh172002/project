@@ -1,0 +1,25 @@
+/* App.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.home-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.contact-section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: white;
+  text-align: center;
+}

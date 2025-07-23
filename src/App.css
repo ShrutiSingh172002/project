@@ -1,0 +1,503 @@
+/* ========== Base & Global Styles ========== */
+html:not(.disable-smooth-scroll) {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 40px; /* Match navbar height */
+}
+
+/* ========== Section Styles ========== */
+.home-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+
+.contact-section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.home-section, .contact-section, .about-section, .blog-section, .terms-section, .privacy-section, .refund-section, .service-detail-section {
+  padding-top: 0;
+  margin-top: 0;
+  scroll-margin-top: 48px;
+}
+
+/* ================================ */
+/* NAVBAR STYLES - Added for mobile navigation fix */
+/* ================================ */
+
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 1rem;
+  background-color: #2d6cdf;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar-main-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  margin-left: 2vw;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.navbar-main-items:not(.mobile) {
+  display: flex !important;
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+  display: none !important;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin-right: 1.2rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-number-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  font-size: 1rem;
+  background: none;
+}
+
+.contact-number-link svg {
+  font-size: 1.1em;
+}
+
+.contact-number-link:hover {
+  color: #e0e7ff;
+}
+
+/* Hamburger Menu - Hidden by default */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
+.hamburger-menu:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem;
+    overflow: visible;
+  }
+  
+  .hamburger-menu {
+    display: block;
+  }
+  
+  .navbar-right {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #E0F4FF; /* Light sky blue background */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 2rem 2rem 2rem;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .navbar-right-mobile {
+    right: 0 !important;
+  }
+  
+  .navbar-right .nav-link {
+    color: #1e3a8a; /* Dark blue headings */
+    margin: 0;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(30, 58, 138, 0.2);
+    font-size: 1.1rem;
+    font-weight: 600; /* Make headings slightly bolder */
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .navbar-right .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #1e3a8a;
+    transform: translateX(5px); /* Slight animation on hover */
+  }
+  
+  .navbar-right .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  .mobile-menu-overlay {
+    display: block;
+  }
+  .contact-number-link {
+    color: #1e3a8a !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    background: none;
+    opacity: 1 !important;
+    margin: 0;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1rem 0;
+    padding-left: 0.5rem;
+    margin-left: -0.6rem;
+    box-sizing: border-box;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(30, 58, 138, 0.2);
+  }
+  .contact-number-link:hover {
+    border: 1px solid #1e3a8a;
+    color: #2d6cdf;
+  }
+  .navbar-main-items.mobile {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    background: #2d6cdf;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    z-index: 1004;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: none;
+  }
+  .navbar-main-items.mobile.open {
+    display: flex !important;
+  }
+  .navbar-main-items.mobile .nav-link {
+    font-size: 1.05rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: none;
+    text-align: left;
+  }
+  .navbar-main-items.mobile .nav-link:last-child {
+    border-bottom: none;
+  }
+  .navbar-main-items.mobile .contact-number-link {
+    color: #fff !important;
+  }
+  .navbar-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background: #2d6cdf;
+    z-index: 1001;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+  .logo {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    white-space: nowrap;
+  }
+  .mobile-center-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    padding: 0.1rem 0.2rem;
+    color: #fff !important;
+    height: 40px;
+    background: none;
+    border: none;
+    white-space: nowrap;
+  }
+  
+  /* Hide desktop phone center on mobile */
+  .navbar-phone-center {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 40px;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0.5rem 1.5rem;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  
+  .navbar-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 50px;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+  }
+  
+  .mobile-center-phone {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Hide desktop phone center on tablet */
+  .navbar-phone-center {
+    display: none;
+  }
+  
+  .navbar-main-items {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+    flex-shrink: 0;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.5rem;
+    white-space: nowrap;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .hamburger-menu {
+    display: none !important;
+  }
+  
+  .navbar-right {
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    box-shadow: none;
+  }
+  
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+  
+  /* Left section - Logo */
+  .navbar-mobile-layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    height: 50px;
+    flex-shrink: 0;
+    min-width: 0;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap;
+  }
+  
+  /* Hide phone number in mobile layout on desktop */
+  .mobile-center-phone {
+    display: none !important;
+  }
+  
+  /* Center section - Phone number */
+  .navbar-phone-center {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    height: 50px;
+    min-width: 0;
+    position: relative;
+    padding-right: 2rem;
+  }
+  
+  .navbar-phone-center .contact-number-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  
+  /* Right section - Navigation links */
+  .navbar-main-items {
+    display: flex !important;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    width: auto;
+    flex-shrink: 0;
+    min-width: 0;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+    white-space: nowrap;
+  }
+}
+
+.last-nav-link {
+  margin-right: 1.2rem;
+}
+
+.category-card {
+  background: #fff;
+  color: #222;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.category-card:hover {
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.18);
+  transform: translateY(-4px) scale(1.02);
+}
