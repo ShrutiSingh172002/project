@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './ServiceDetail.css';
 import windowsImg from '../assets/windows_antivirus.jpeg';
 import macImg from '../assets/mac_antivirus.jpg';
@@ -9,6 +9,7 @@ import enterpriseImg from '../assets/enterprise_security.jpeg';
 import webImg from '../assets/web_protection.png';
 import vpnImg from '../assets/vpn_firewall.jpg';
 import emailImg from '../assets/email_protection.jpg';
+import { Helmet } from 'react-helmet';
 
 const serviceDetails = {
   1: {
@@ -76,11 +77,19 @@ const ServiceDetail = () => {
   if (!service) return <div>Service not found.</div>;
 
   return (
-    <div className="service-detail">
-      <h2 className="heading-blue">{service.title}</h2>
-      <img src={service.image} alt={service.title} className="service-image" />
-      <p className="text-black">{service.description}</p>
-      <p className="highlight-yellow">Pricing: {service.price}</p>
+    <div>
+      <Helmet>
+        <link rel="canonical" href={`https://safenetcare.online/services/${id}`} />
+      </Helmet>
+      <div className="service-detail">
+        <h1 className="heading-blue">{service.title}</h1>
+        <img src={service.image} alt={service.title} className="service-image" />
+        <p className="text-black">{service.description}</p>
+        <p className="highlight-yellow">Pricing: {service.price}</p>
+      </div>
+      <div style={{marginTop:'2rem', textAlign:'center'}}>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/contact">Contact</Link> | <Link to="/services/1">Windows Antivirus</Link>
+      </div>
     </div>
   );
 };
